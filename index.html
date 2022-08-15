@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Design Patterns</h1>
+					</section>
+				<section data-auto-animate>
+					<h2>Design Patterns</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Design Patterns</h2>
+					<p>general repeatable solution to a commonly occurring problem</p>
+				</section>
+				<section data-auto-animate>
+					<h2>Design Patterns</h2>
+					<p>general repeatable solution to a commonly occurring problem</p>
+					<p>it is a description or template for how to solve a problem</p>
+				</section>
+				<section data-auto-animate>
+					<p> 	&#10026; design Patterns help to prevent subtle issues</p>
+				</section>
+				<section data-auto-animate>
+					<p> 	&#10026; design Patterns help to prevent subtle issues</p>
+					<p> 	&#10026; improves code redability</p>
+				</section>
+				<section data-auto-animate>
+					<p> 	&#10026; design Patterns help to prevent subtle issues</p>
+					<p> 	&#10026; improves code redability</p>
+					<p> 	&#10026; helps communication</p>
+				</section>
+				<section data-auto-animate>
+					<p> 	&#10026; design Patterns help to prevent subtle issues</p>
+					<p> 	&#10026; improves code redability</p>
+					<p> 	&#10026; helps communication</p>
+					<p> 	&#10026; sounds cool :) </p>
+				</section>
+				<section> Architectural patterns
+					<section data-auto-animate><ul>
+						<li>Creational patterns</li>
+						</ul>
+					</section>
+					<section data-auto-animate><ul>
+						<li>Creational patterns</li>
+						<li>Structural patterns</li>
+					</ul>
+					</section>
+					<section data-auto-animate><ul>
+						<li>Creational patterns</li>
+						<li>Structural patterns</li>
+						<li>Behavioral patterns</li>
+					</ul>
+					</section>
+				</section>
+				<section><h1>Factory Method</h1>
+					<h4>Virtual Constructor</h4></section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<img src="assets/factory-method-en.jpg" style="height: 300px;">
+					<div>Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.</div>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<img src="assets/problem1-en.jpg" style="height: 300px;">
+					<div>The bulk of your code lives inside the Truck class</div>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<img src="assets/problem1-en.jpg" style="height: 300px;">
+					<div>Adding Ships into the app would require making changes to the entire codebase.</div>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<img src="assets/solution1.jpg" style="height: 300px;">
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out">replace direct object construction calls (using the new operator) with calls to a special factory method</p>
+						<p class="fragment fade-in-then-out">The factory method in the RoadLogistics class returns truck objects, whereas the factory method in the SeaLogistics class returns ships.</p>
+					</div>
+				</section>
+				<section data-auto-animate-unmatched="fade">
+					<img src="assets/solution2-en.jpg" style="height: 300px;">
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out">all products must follow the same interface</p>
+						<p class="fragment fade-in-then-out">both Truck and Ship classes should implement the Transport interface, which declares a method called deliver</p>
+					</div>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<img src="assets/solution3-en.png" style="height: 300px;">
+					<div>The client treats all the products as abstract Transport.</div>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<img src="assets/structure.jpg" style="height: 300px;">
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out">1. The Product declares the interface, which is common to all objects</p>
+						<p class="fragment fade-in-then-out">2. Concrete Products are different implementations of the product interface.</p>
+						<p class="fragment fade-in-then-out">3. The Creator class declares the factory method that returns new product objects.</p>
+						<p class="fragment fade-in-then-out">4. Concrete Creators override the base factory method so it returns a different type of product.</p>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>&#9734; Applicability</h3>					
+				</section>
+				<section data-auto-animate>
+					<h3>&#9734; Applicability</h3>					
+					<p>Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>&#9734; Applicability</h3>					
+					<p>Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>&#9734; Applicability</h3>					
+					<p>Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.</p>
+					<p>Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Pros and Cons</h3>					
+				</section>
+				<section data-auto-animate>
+					<h3>Pros and Cons</h3>					
+					<p>	&#9989; You avoid tight coupling between the creator and the concrete products.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Pros and Cons</h3>					
+					<p>	&#9989; You avoid tight coupling between the creator and the concrete products.</p>
+					<p>	&#9989; Single Responsibility Principle.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Pros and Cons</h3>					
+					<p>	&#9989; You avoid tight coupling between the creator and the concrete products.</p>
+					<p>	&#9989; Single Responsibility Principle.</p>
+					<p>	&#9989; Open/Closed Principle.</p>
+				</section>
+				<section data-auto-animate>
+					<h3>Pros and Cons</h3>					
+					<p>	&#9989; You avoid tight coupling between the creator and the concrete products.</p>
+					<p>	&#9989; Single Responsibility Principle.</p>
+					<p>	&#9989; Open/Closed Principle.</p>
+					<p> &#10060; The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern.</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
